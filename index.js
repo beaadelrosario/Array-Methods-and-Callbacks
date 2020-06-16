@@ -55,33 +55,48 @@ console.log ('Task 1e')
 
 function winner2014 (param) {
     if (param["Home Team Goals"] > param["Away Team Goals"]);
-        return param["Home Team Name"];
+        return param["Home Team Name"]; {
+    if (param["Home Team Goals"] < param["Away Team Goals"]);
+        return param["Away Team Name"]; 
+        }
+        
 }
 
 console.log (winner2014(x));
 
 
-/* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
+/* Task 2: Create a function called getFinals that takes `data` as an argument and returns an array of objects with only finals data */
+console.log ('Task 2')
+ // data is the argument/param
+// return array or objects [{}] with only "final" data
+//"Stage": "Final"
 
-function getFinals(/* code here */) {
+const getFinals = fifaData.filter (data => data.Stage === "Final");
+console.log (getFinals);
 
-    /* code here */
 
-};
+/* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset 
 
-/* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
+WANT: years = [years,years,years,year]
 
-function getYears(/* code here */) {
 
-    /* code here */
+*/
 
-};
+console.log ('Task 3')
 
-getYears();
+const years = [];
+
+function getYears(getFinals){
+   fifaData.forEach(function(item){
+       return years.push(`${item.Year}`);
+   });
+}
+
+console.log(years);
 
 /* Task 5: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
+function getWinners(callback) {
 
     /* code here */
 
