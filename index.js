@@ -120,19 +120,38 @@ console.log (getWinners(getFinals));
 /* Task 6: Implement a higher-order function called `getWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!" 
 
 Parameters: 
- * callback function getWinners param1
- * callback function getYears param2
- * forloop
- * let = string push "In {year}, {country} won the world cup!" 
- * return at the end
- */
-console.log ('Task 6')
+ * callback function getWinners -cb1
+ * callback function getYears -cb2
 
-function getWinnersByYear(param1,param2) {
+ forloop
+let = string push "In {year}, {country} won the world cup!" 
+return at the end
 
+return (list.push(`In ${this.year}, ${this.country} won the world cup!`)); */
+
+console.log ('Task 6');
+console.log(getWinners(getFinals)); //list of winning countries from finals
+console.log(getYears(getFinals)); //list of years the winning countries from finals won
+
+function getWinnersByYear(cbWinners,cbYears) {
+    let years = [];
+    let listwin = cbWinners(getFinals);
+    let listyear = cbYears(getFinals);
+      for(let i =0; i < listwin.length; i++){
+         years.push(`In ${listyear[i]}, ${listwin[i]} won the world cup!`);
+     }
+     return years;
 };
 
-getWinnersByYear();
+  console.log(getWinnersByYear(getWinners,getYears));
+
+function test (){
+    let x = 1 + 1;
+    return x;
+}
+
+console.log(test);
+console.log(test());
 
 /* Task 7: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) 
 
@@ -162,7 +181,7 @@ console.log(getAverageGoals(fifaData));
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+function getCountryWins(data,teamInititals) {
 
     /* code here */
 
